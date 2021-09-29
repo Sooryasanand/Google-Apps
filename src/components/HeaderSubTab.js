@@ -98,10 +98,10 @@ function headerSubTab() {
         style={{
           paddingRight: 20,
           paddingLeft: 20,
-          alignSelf: "center",
-          alignItems: "center",
           color: "#065FDA",
           fontWeight: "500",
+          alignSelf: "center",
+          alignItems: "center",
         }}
       >
         ALL

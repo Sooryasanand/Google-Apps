@@ -4,7 +4,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import HomeScreen from "./src/HomeScreen";
-import ExploreScreen from "./src/ExploreScreen";
 import SubscriptionScreen from "./src/SubscriptionScreen";
 import LibraryScreen from "./src/LibraryScreen";
 
@@ -42,7 +41,6 @@ export default function App() {
         }}
       >
         <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Explore" component={ExploreScreen} />
         <Tab.Screen name="Subscription" component={SubscriptionScreen} />
         <Tab.Screen name="Library" component={LibraryScreen} />
       </Tab.Navigator>

@@ -1,24 +1,20 @@
 import React from "react";
 import {
-  StyleSheet,
-  Text,
   View,
-  SafeAreaView,
+  Text,
+  ScrollView,
+  StyleSheet,
   FlatList,
   Image,
   ImageBackground,
 } from "react-native";
-import Header from "./components/Header";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-import HeaderSubTab from "./components/HeaderSubTab";
-import HeaderTopTab from "./components/HeaderTopTab";
-import { ScrollView } from "react-native-gesture-handler";
-import HeaderTopTabSub from "./components/HeaderTopTabSub";
 
 const DATA = [
   {
     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-    title: "1 vs 10 Hunters in GTA!",
+    title: "1 vs 10 Hunters...",
     creator: "MrBeast Gaming",
     time: "10:05",
     imageUrl:
@@ -28,7 +24,7 @@ const DATA = [
   },
   {
     id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-    title: "Google – How to Start a New Job",
+    title: "Google – How to Sta...",
     creator: "Google",
     time: "0:31",
     imageUrl:
@@ -38,7 +34,7 @@ const DATA = [
   },
   {
     id: "58694a0f-3da1-471f-bd96-145571e29d72",
-    title: "The BIGGEST Tech Hoarder!",
+    title: "The BIGGEST Tech Ho...",
     creator: "Linus Tech Tips",
     time: "10:05",
     imageUrl:
@@ -48,7 +44,7 @@ const DATA = [
   },
   {
     id: "58694a0f-3da1-471f-bd96-11e29d72",
-    title: "How to Learn Anything FASTER",
+    title: "How to Learn Anyt...",
     time: "14:43",
     creator: "Ali Abdaal",
     imageUrl:
@@ -58,34 +54,21 @@ const DATA = [
   },
   {
     id: "58694a0f-3d1f-bd96-145571e29d72",
-    title: "🔴 Build Tesla Clone with React Native",
+    title: "🔴 Build Tesla Clon...",
     time: "20:34",
     creator: "Clever Programmer",
     imageUrl:
       "https://i.ytimg.com/vi/y7-IG4SSI3E/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB0kAjWozIgCjBwRk9vmI3_1rsvdg",
-    channel:
-      "https://yt3.ggpht.com/ytc/AKedOLRbdv3Di8paQyrgMF_VwFXPkhwVzcW59Vgo8dTsyw=s88-c-k-c0x00ffffff-no-rj",
   },
 ];
 
-function Item({ title, imageUrl, channel, creator, time }) {
+function Item({ title, imageUrl, creator }) {
   return (
-    <View style={styles.item}>
-      <ImageBackground source={{ uri: imageUrl }} style={{ height: 200 }}>
-        <Text
-          style={{
-            position: "absolute",
-            marginTop: 170,
-            marginLeft: 330,
-            backgroundColor: "black",
-            padding: 2,
-            color: "white",
-            fontSize: 13,
-          }}
-        >
-          {time}
-        </Text>
-      </ImageBackground>
+    <TouchableOpacity style={styles.item}>
+      <ImageBackground
+        source={{ uri: imageUrl }}
+        style={{ height: 70, width: 150 }}
+      ></ImageBackground>
       <View
         style={{
           display: "flex",
@@ -99,77 +82,64 @@ function Item({ title, imageUrl, channel, creator, time }) {
             flexDirection: "row",
           }}
         >
-          <Image
-            source={{ uri: channel }}
-            style={{ height: 30, width: 30, borderRadius: 30, margin: 10 }}
-          />
           <View>
             <Text style={styles.title}>{title}</Text>
             <Text
               style={{
-                paddingLeft: 6,
-                paddingTop: 4,
+                paddingTop: 2,
+                fontSize: 12,
                 color: "#606060",
               }}
             >
-              {creator} · {parseInt(Math.random() * 1000)}K Views ·{" "}
-              {parseInt(Math.random() * 10)} months ago
+              {creator}
             </Text>
           </View>
         </View>
         <Icon
           name="dots-vertical"
-          size={25}
+          size={15}
           color="#606060"
           style={{ paddingTop: 10 }}
+        />
+      </View>
+    </TouchableOpacity>
+  );
+}
+
+function Recent() {
+  return (
+    <View>
+      <Text style={{ fontSize: 15, marginLeft: 20, marginBottom: 5 }}>
+        Recent
+      </Text>
+      <View style={{ flexDirection: "row" }}>
+        <FlatList
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          data={DATA}
+          renderItem={({ item }) => (
+            <Item
+              title={item.title}
+              creator={item.creator}
+              imageUrl={item.imageUrl}
+            />
+          )}
+          keyExtractor={(item) => item.id}
         />
       </View>
     </View>
   );
 }
 
-function SubscriptionScreen() {
-  return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <Header />
-        <HeaderSubTab />
-        <HeaderTopTabSub />
-        <FlatList
-          data={DATA}
-          renderItem={({ item }) => (
-            <Item
-              title={item.title}
-              time={item.time}
-              imageUrl={item.imageUrl}
-              channel={item.channel}
-              creator={item.creator}
-            />
-          )}
-          keyExtractor={(item) => item.id}
-        />
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
-
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-  },
   item: {
-    height: 270,
-    borderStyle: "solid",
-    borderBottomColor: "grey",
+    margin: 10,
   },
   title: {
-    fontSize: 15,
-    fontWeight: "500",
-    paddingLeft: 6,
-    paddingTop: 8,
+    fontSize: 14,
+    paddingTop: 5,
     shadowOpacity: 0,
   },
 });
 
-export default SubscriptionScreen;
+export default Recent;
