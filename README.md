@@ -1,19 +1,14 @@
 # Youtube Clone
+A Youtube Clone which is made using React Native. The app is just an UI clone of the real youtube app.
 
-A Youtube Clone made using React Native. 
+## Key Featuers of the app 
+- Sliding view in Home Screen, Subscriptions Screen, Library Screen.
+- Navigation.
 
-Some the main Featuers are: 
+## Screenshot
+<img src="https://github.com/Sooryasanand/Youtube-Clone/blob/main/Demo/Youtube%20Home%20Page.png" width="300" height="600">
+<img src="https://github.com/Sooryasanand/Youtube-Clone/blob/main/Demo/Youtube%20Home%20Page%202.png" width="300" height="600">
+<img src="https://github.com/Sooryasanand/Youtube-Clone/blob/main/Demo/Youtube%20Subscription%20Page.png" width="300" height="600">
+<img src="https://github.com/Sooryasanand/Youtube-Clone/blob/main/Demo/Youtube%20Library%20Page.PNG" width="300" height="600">
 
-Its preety close to the actual Yotube atleast in the UI.
-
-Have Navigation
-
-<img src="https://github.com/Sooryasanand/Google-Apps/blob/youtubeApp/Demo/Youtube%20Home%20Page.png" width="300" height="600">
-<img src="https://github.com/Sooryasanand/Google-Apps/blob/youtubeApp/Demo/Youtube%20Home%20Page%202.png" width="300" height="600">
-<img src="https://github.com/Sooryasanand/Google-Apps/blob/youtubeApp/Demo/Youtube%20Subscription%20Page.png" width="300" height="600">
-<img src="https://github.com/Sooryasanand/Google-Apps/blob/youtubeApp/Demo/Youtube%20Library%20Page.PNG" width="300" height="600">
-
-This Repo is trying to create a clone of all the Google Apps using React Native. You can find each projects under different branches.
-
-1. Youtube Clone
-
+[MIT](https://choosealicense.com/licenses/mit/)
