@@ -1,4 +1,4 @@
-# Google-Apps
+# Youtube Clone
 
 A Youtube Clone made using React Native. 
 
