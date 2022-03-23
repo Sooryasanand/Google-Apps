@@ -11,4 +11,5 @@ A Youtube Clone which is made using React Native. The app is just an UI clone of
 <img src="https://github.com/Sooryasanand/Youtube-Clone/blob/main/Demo/Youtube%20Subscription%20Page.png" width="300" height="600">
 <img src="https://github.com/Sooryasanand/Youtube-Clone/blob/main/Demo/Youtube%20Library%20Page.PNG" width="300" height="600">
 
+## License
 [MIT](https://choosealicense.com/licenses/mit/)
